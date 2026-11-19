@@ -5,10 +5,10 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_USER: ai_user
-      POSTGRES_PASSWORD: dev_password
+      POSTGRES_PASSWORD: admin@123
       POSTGRES_DB: ai_document_db
     ports:
-      - "5433:5432"
+      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:

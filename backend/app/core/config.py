@@ -1,4 +1,7 @@
+from pathlib import Path
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 class Settings(BaseSettings):
@@ -24,7 +27,12 @@ class Settings(BaseSettings):
     MAX_UPLOAD_SIZE_MB: int = 20
 
     model_config = SettingsConfigDict(
-        env_file="../.env",
+        env_file=(
+            str(BASE_DIR.parent / ".env"),
+            str(BASE_DIR / ".env"),
+            ".env",
+            "../.env",
+        ),
         extra="ignore"
     )
 

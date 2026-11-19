@@ -20,3 +20,7 @@ python-docx
 pytest
 pytest-asyncio
 pwdlib[argon2]
+PyMuPDF
+python-docx
+celery
+redis

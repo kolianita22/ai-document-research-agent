@@ -47,6 +47,7 @@ async def register(
         full_name=data.full_name.strip(),
         email=email,
         password_hash=hash_password(data.password),
+        is_active=True,
     )
 
     db.add(user)
